@@ -31,7 +31,7 @@ void UGrabber::Grab() {
 	// LINE TRACE and try to reach any actors with physics body collision channel set
 	GetFirstPhysicsBodyInReach();
 
-	/// If we hit something then attach a physics handles
+	/// If we hit something then attach a physics handle
 	// TODO attach physics handle
 }
 
@@ -98,7 +98,7 @@ FHitResult UGrabber::GetFirstPhysicsBodyInReach() const
 	// Draw a red trace in the world to visualize
 	//float Reach = 100.f; //See header file
 	FVector LineTraceEnd = Reach * PlayerViewPointRotation.Vector() + PlayerViewPointLocation;
-	DrawDebugLine(
+/*	DrawDebugLine(
 		GetWorld(),
 		PlayerViewPointLocation,
 		LineTraceEnd,
@@ -108,7 +108,7 @@ FHitResult UGrabber::GetFirstPhysicsBodyInReach() const
 		0.f,
 		10.f
 	);
-
+*/
 	/// Setup query parameters
 	FCollisionQueryParams TraceParameters(FName(TEXT("")), false, GetOwner());
 
@@ -125,11 +125,11 @@ FHitResult UGrabber::GetFirstPhysicsBodyInReach() const
 
 	// See what we hit
 	AActor * ActorHit = Hit.GetActor();
-	/*
+	
 	if (ActorHit) {
 	UE_LOG(LogTemp, Warning, TEXT("Line trace hit: %s"), *(ActorHit->GetName()));
 	}
-	*/
+	
 	//UE_LOG(LogTemp, Warning, TEXT("%s is at %s!"), *sObjectName, *sObjectPos);
 
 	return FHitResult();
