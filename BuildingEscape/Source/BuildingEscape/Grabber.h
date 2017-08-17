@@ -50,4 +50,7 @@ private:
 
 	// Returns current end of reach line
 	FVector GetReachLineEnd();
+
+	//Mass is in kg
+	float GetTotalMassOfActorONPlate();
 };
